@@ -7,6 +7,23 @@ $mixColor: #fdfdfd;
 $secondaryColor:  #0392a5;
 $descColor: mix($primaryColor,$mixColor,30);
 
+
+.first-color { 
+	background: #233142; 
+}
+	
+.second-color { 
+	background: #455d7a; 
+}
+
+.third-color { 
+	background: #f95959; 
+}
+
+.fourth-color { 
+	background: #e3e3e3; 
+}
+
 .wrapper{
     max-width: 100% !important;
 }
