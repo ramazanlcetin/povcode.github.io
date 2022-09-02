@@ -7,6 +7,10 @@ $mixColor: #fdfdfd;
 $secondaryColor:  #0392a5;
 $descColor: mix($primaryColor,$mixColor,30);
 
+.wrapper{
+    max-width 100% !important;
+}
+
 body{
     background-color:mix($mixColor,$primaryColor,95);
     td, table{
