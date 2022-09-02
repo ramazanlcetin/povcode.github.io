@@ -4,17 +4,12 @@
     {%- assign default_paths = site.pages | map: "path" -%}
     {%- assign page_paths = site.header_pages | default: default_paths -%}
     {%- assign titles_size = site.pages | map: 'title' | join: '' | size -%}
-    <div class="identity">
-        <div class="picture">
-              <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-              <div class="search-box">
-                <form action="/search" method="get">
-                  <input type="text" id="q" name="q" autocomplete="off" placeholder="Search"/>
-                  <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-              </div>
-        </div>
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+    <div class="search-box">
+      <form action="/search" method="get">
+        <input type="text" id="q" name="q" autocomplete="off" placeholder="Search"/>
+        <button type="submit"><i class="fa fa-search"></i></button>
+      </form>
     </div>
-
   </div>
 </header>
