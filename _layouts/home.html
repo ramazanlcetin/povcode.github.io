@@ -7,56 +7,62 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-<div class="content">
-
+<div class="content row">
   {{ content }}
+   <div class="col-4">
+     xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  </div>
   
-  <div class="posts">
-  {%- if page.list_title -%}
-      <h2 class="post-list-heading">{{ page.list_title }}</h2>
-    {%- endif -%}
-    <ul class="post-list">
-      {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-      {%- for post in paginator.posts -%}
-      <li>
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <span class="categories {{ post.categories | 'default' }}"></span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}            
-            <i class="icon">
-              <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>
-            </i>
+  <div class="col-8">
+      <div class="posts">
+        {%- if page.list_title -%}
+            <h2 class="post-list-heading">{{ page.list_title }}</h2>
+          {%- endif -%}
+          <ul class="post-list">
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            {%- for post in paginator.posts -%}
+            <li>
+              <span class="post-meta">{{ post.date | date: date_format }}</span>
+              <span class="categories {{ post.categories | 'default' }}"></span>
+              <h3>
+                <a class="post-link" href="{{ post.url | relative_url }}">
+                  {{ post.title | escape }}            
+                  <i class="icon">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="eye" class="svg-inline--fa fa-eye fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z"></path></svg>
+                  </i>
+                </a>
+              </h3>
+              {%- if site.show_excerpts -%}
+                <div class="excerpt">
+                  {{ post.excerpt }}
+                </div>
+              {%- endif -%}
+            </li>
+            {%- endfor -%}
+          </ul>
+
+
+      <!-- Pagination links -->
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path }}" class="previous">
+            Previous
           </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          <div class="excerpt">
-            {{ post.excerpt }}
+        {% else %}
+          <span class="previous">Previous</span>
+        {% endif %}
+        <span class="page_number ">
+          Page: {{ paginator.page }} of {{ paginator.total_pages }}
+        </span>
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+        {% else %}
+          <span class="next ">Next</span>
+        {% endif %}
+      </div>
           </div>
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
+  </div>
   
 
-<!-- Pagination links -->
-<div class="pagination">
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      Previous
-    </a>
-  {% else %}
-    <span class="previous">Previous</span>
-  {% endif %}
-  <span class="page_number ">
-    Page: {{ paginator.page }} of {{ paginator.total_pages }}
-  </span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">Next</a>
-  {% else %}
-    <span class="next ">Next</span>
-  {% endif %}
-</div>
-    </div>
-</div>
+  </div>
 </div>
