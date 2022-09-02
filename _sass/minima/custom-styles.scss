@@ -7,6 +7,9 @@ $mixColor: #fdfdfd;
 $secondaryColor:  #0392a5;
 $descColor: mix($primaryColor,$mixColor,30);
 
+.first-gradient{
+	background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
+}
 
 .first-color { 
 	background: #233142; 
