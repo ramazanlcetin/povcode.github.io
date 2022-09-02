@@ -1,5 +1,5 @@
 exclude: ['posts']
-url: https://fmarslan.com
+url: https://povcode.com
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
